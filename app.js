@@ -6,38 +6,14 @@ let computerChoice = ''
 // // choices = 
 // }
 
-function playerSelection(x){
-if(x == 0 ){
-  playerChoice = 'rock'
-}
-else if (x == 1){
-  playerChoice = 'paper'
-}
-else {
-  playerChoice = 'scissors'
-}
+function playerSelection(x) {
+  playerChoice = choices[1]
 }
 
-function computerSelection(){
+function setComputerSelection() {
   let i = Math.floor(Math.random() * 3)
-  if(i == 0){
-    computerChoice = 'rock'
-  }
-  else if (i == 1){
-    computerChoice = 'paper'
-  }
-   else {
-    computerChoice = 'scissors'
-  }
+  computerChoice = choices[1]
 }
-
-function play(){
-  computerSelection()
-  if(computerChoice == 'rock' && playerChoice == 'paper'){
-  window.alert('rock')
-  }
- else{
-   playerChoice == computerChoice
-   window.alert('tie')
- }
+function play() {
+  setComputerSelection()
 }
