@@ -19,7 +19,7 @@ function alertWin() {
   window.alert('You Won!')
 }
 
-function alertLose {
+function alertLose() {
   window.alert('Sad Day')
 }
 
@@ -30,25 +30,26 @@ function alertTie() {
 
 
 
-function play(){
+function play() {
+  setComputerSelection()
   switch (computerChoice) {
-  case 'rock':
-    if (playerChoice == 'rock') {
-      alertTie()
-    } else if (playerChoice == 'paper'){
-      alertWin()
-    } else {
-      alertLose()
-    }
-    
-    break;
-  case 'paper':
+    case 'rock':
+      if (playerChoice == 'rock') {
+        alertTie()
+      } else if (playerChoice == 'paper') {
+        alertWin()
+      } else {
+        alertLose()
+      }
+
+      break;
+    case 'paper':
+      // code block
+      break;
+    case 'scissors':
     // code block
-    break;
-  case 'scissors':
-  // code block
-  default:
-    break;
-  // code block
-}
+    default:
+      break;
+    // code block
+  }
 }
