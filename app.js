@@ -2,24 +2,22 @@ let choices = ["rock", "paper", "scissors"]
 let playerChoice = ''
 let computerChoice = ''
 
-// // function startGame(){
-// // choices = 
-// }
 
-function playerSelection(x) {
-  playerChoice = choices[1]
+
+function setPlayerSelection(x) {
+  playerChoice = choices[x]
 }
 
 function setComputerSelection() {
   let i = Math.floor(Math.random() * 3)
-  computerChoice = choices[1]
+  computerChoice = choices[i]
 }
 
-function alertWin() {
+function alertPlayerWin() {
   window.alert('You Won!')
 }
 
-function alertLose() {
+function alertPlayerLose() {
   window.alert('Sad Day')
 }
 
@@ -30,24 +28,40 @@ function alertTie() {
 
 
 
-function play() {
+function play(playerChoiceIndex) {
+  setPlayerSelection(playerChoiceIndex)
   setComputerSelection()
+
+  console.log('Player Chose: ' + playerChoice )
+  console.log('Computer Chose: ' + computerChoice )
   switch (computerChoice) {
     case 'rock':
       if (playerChoice == 'rock') {
         alertTie()
       } else if (playerChoice == 'paper') {
-        alertWin()
+        alertPlayerWin()
       } else {
-        alertLose()
+        alertPlayerLose()
       }
-
       break;
     case 'paper':
-      // code block
+      if (playerChoice == 'paper') {
+        alertTie()
+      } else if (playerChoice == 'scissors') {
+        alertPlayerWin()
+      } else {
+        alertPlayerLose()
+      }
       break;
     case 'scissors':
-    // code block
+      if (playerChoice == 'scissors') {
+        alertTie()
+      } else if (playerChoice == 'rock') {
+        alertPlayerWin()
+      } else {
+        alertPlayerLose()
+      }
+      break;
     default:
       break;
     // code block
