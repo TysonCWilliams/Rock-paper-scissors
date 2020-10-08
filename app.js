@@ -14,9 +14,6 @@ function setComputerSelection() {
   let i = Math.floor(Math.random() * 3)
   computerChoice = choices[1]
 }
-function play() {
-  setComputerSelection()
-}
 
 function alertWin() {
   window.alert('You Won!')
